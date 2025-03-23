@@ -94,6 +94,7 @@ const setOidcAuthEnv = (c: Context, config?: Partial<OidcAuthEnv>) => {
     OIDC_COOKIE_PATH: config?.OIDC_COOKIE_PATH ?? ev.OIDC_COOKIE_PATH,
     OIDC_COOKIE_NAME: config?.OIDC_COOKIE_NAME ?? ev.OIDC_COOKIE_NAME,
     OIDC_COOKIE_DOMAIN: config?.OIDC_COOKIE_DOMAIN ?? ev.OIDC_COOKIE_DOMAIN,
+    OIDC_AUDIENCE: config?.OIDC_AUDIENCE ?? ev.OIDC_AUDIENCE,
   }
   if (oidcAuthEnv.OIDC_AUTH_SECRET === undefined) {
     throw new HTTPException(500, { message: 'Session secret is not provided' })
